@@ -9,7 +9,12 @@
 </head>
 <body>
     <!-- <p id="app">Using mustaches:{{ rawHtml }}</p> -->
-    <p id="app">Using v-html directive:<span v-html="rawHtml"></span></p>
+    <!-- <p id="app">Using v-html directive:<span v-html="rawHtml"></span></p> -->
+    <div v-bind:id="dynamicId">
+        <button v-bind:disabled="isButtonDisabled">Button</button>
+        <a v-bind:[attributeName]></a>
+        <a v-on:[eventName]="doSomething"></a>
+    </div>
     <script src="vue.js"></script>
 </body>
 </html>
