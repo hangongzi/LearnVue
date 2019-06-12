@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul id="example-1">
+        <li v-for="item in items">
+            {{ item.message }}
+        </li>
+    </ul>
+
+    <ul id="example-2">
+        <li v-for="(item, index) of items" :key="item.id">
+            {{ parentMessage }} - {{ index }} - {{ item.message }}
+        </li>
+    </ul>
+
+    <ul id="v-for-object">
+        <li v-for="value of object" :key="value.id">
+            {{ value }}
+        </li>
+        <br>
+        <div v-for="(value, name) in object" :key="value.id">
+            {{ name }}:{{ value }}
+        </div>
+        <br>
+        <div v-for="(value, name, index) in object" :key="value.id">
+            {{ index }} . {{ name }} : {{ value }}
+        </div>
+    </ul>
+
+    <ul id="sort">
+        <li v-for="n in eventNumbers" :key="n.id">
+            {{ n }}
+        </li>
+    </ul>
+
+    <div>
+        <span v-for="n in 10">
+            {{ n }}
+        </span>
+    </div>
+
+    <ul id="template-v-for">
+        <template v-for="item in items" :key="item.id">
+            <li>{{ item.msg }}</li>
+            <li class="divider" role="presentation"></li>
+        </template>
+        <li v-for="todo in todos" :key="todo.id" v-if="!todo.isComplete">
+            {{ todo }}
+        </li>
+    </ul>
+
+    <div id="todo-list-example">
+            <form v-on:submit.prevent="addNewTodo">
+              <label for="new-todo">Add a todo</label>
+              <input
+                v-model="newTodoText"
+                id="new-todo"
+                placeholder="E.g. Feed the cat"
+              >
+              <button>Add</button>
+            </form>
+            <ul>
+              <li
+                is="todo-item"
+                v-for="(todo, index) in todos"
+                v-bind:key="todo.id"
+                v-bind:title="todo.title"
+                v-on:remove="todos.splice(index, 1)"
+              ></li>
+            </ul>
+    </div>
+
+    <script src="vue.js"></script>
+</body>
+</html>
