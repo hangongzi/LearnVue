@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="components_demo">
+            <!-- 创建一个实例 -->
+        <button-counter></button-counter> 
+        <!-- <blog-post title="My journe with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post> -->
+    </div>
+
+    <!-- <div id="blog-post-demo">
+        <blog-post
+            v-for="post in posts" 
+            :key="post.id"
+            :post="post"
+        ></blog-post>
+    </div> -->
+
+    <div id="blog-posts-events-demo">
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <blog-post
+                v-for="post in posts"
+                :key="post.id"
+                :post="post"
+                @enlarge-text="onEnlargeText"
+            ></blog-post>
+        </div>
+        
+    </div>
+
+    <div>
+        <custom-input v-model="searchText" type="text" ></custom-input>
+    </div>
+
+    <script src="vue.js"></script>
+</body>
+</html>
