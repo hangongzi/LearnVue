@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="example-1">
+        <input v-model="message" placeholder="edit me" type="text" />
+        <p>Message is: {{ message }}</p>
+        <span>Multiline message is:</span>
+        <p style="white-space:pre-line;">{{ message }}</p>
+        <br>
+        <textarea 
+            v-model="message" 
+            placeholder="add multiple lines" 
+            name="" 
+            id="" 
+            cols="30" 
+            rows="10"
+        >
+        </textarea>
+    </div>
+
+    <div id="example-2">
+        <input v-model="checked" type="checkbox" id="checkbox"/>
+        <label for="checkbox">{{ checked }}</label>
+    </div>
+
+    <div id="example-3">
+        <input v-model="checkedNames" type="checkbox" id="jack" value="Jack"/>
+        <label for="jack">Jack</label>
+        <input v-model="checkedNames" type="checkbox" id="john" value="John"/>
+        <label for="john">John</label>
+        <input v-model="checkedNames" type="checkbox" id="mike" value="Mike"/>
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+
+    <div id="example-4">
+        <input v-model="picked" type="radio" id="one" value="One"/>
+        <label for="one">One</label>
+        <br>
+        <input v-model="picked" type="radio" id="two" value="Two"/>
+        <label for="two">Two</label>
+        <br>
+        <span>Picked: {{ picked }}</span>
+    </div>
+
+    <div id="example-5">
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="example-6">
+        <select name="" id="" v-model="selected" multiple style="width: 50px;">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <br>
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="dynamic-options">
+        <select name="" id="" v-model="selected" >
+            <option 
+                v-for="option in options" 
+                :value="option.value"
+            >
+                {{ option.text }}
+            </option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    
+
+    <script src="vue.js"></script>
+</body>
+</html>
