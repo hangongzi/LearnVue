@@ -47,7 +47,9 @@ new Vue({
 new Vue({
     el:'#template-v-for',
     data:{
-        items:{}
+        items:{
+          
+        }
     }
 })
 
